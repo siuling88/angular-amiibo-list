@@ -1,0 +1,14 @@
+<h1>Amiibo List</h1>
+<app-form [lista]="lista"></app-form>
+
+<mat-list>
+  <mat-list-item role="listitem" *ngFor="let item of lista">
+    <img matListAvatar [src]="item.image" alt="...">
+    <h3 matLine> {{item.name}} </h3>
+    <span>
+      <button mat-icon-button (click)="openDialog(item)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </span>
+  </mat-list-item>
+</mat-list>

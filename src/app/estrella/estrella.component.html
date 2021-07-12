@@ -1,0 +1,6 @@
+<ng-container *ngFor="let item of array ;let i = index">
+  <button mat-icon-button [value]="item"
+  (click)="set(item)">
+  <mat-icon [ngClass]="{'yellow-star':check(item),'gray-star':check(item)}">star</mat-icon>
+  </button>
+</ng-container>

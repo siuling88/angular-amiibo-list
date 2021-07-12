@@ -1,0 +1,17 @@
+<form class="example-form" [formGroup]="form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nombre de la figura</mat-label>
+    <input matInput
+       [matAutocomplete]="auto"
+       formControlName="figura">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of figurasFiltradas | async" [value]="item.name">
+        <img class="example-option-img" aria-hidden [src]="item.image" height="25">
+        <span>{{item.name}}</span> |
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <br>
+  <app-estrella formControlName="estrellas" cantidad="5"></app-estrella>
+</form>
+<button (click)="votar()" [disabled]="!form.valid" mat-raised-button>Show</button>

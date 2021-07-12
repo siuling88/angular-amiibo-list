@@ -1,0 +1,12 @@
+<h1 mat-dialog-title class="titulo">Votaste a {{data.nombre}}</h1>
+<div mat-dialog-content>
+  <ng-container *ngFor="let item of array;let i = index">
+    <button disable="true" mat-icon-button [value]="item">
+  <mat-icon [ngClass]="{'yellow-star':item<=data.estrellas,'gray-star':item>data.estrellas}">star</mat-icon>
+  </button>
+  </ng-container>
+  <img class="figura" [src]="data.imagen">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+</div>
